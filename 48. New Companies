@@ -1,0 +1,10 @@
+Select a.company_code, a.founder ,count(distinct(a.lead_manager_code)),
+count(distinct(a.senior_manager_code)), count(distinct(a.manager_code)),
+count(distinct(a.employee_code))
+From (select a.founder,a.company_code,b.lead_manager_code,c.senior_manager_code,d.manager_code,e.employee_code
+from Company a, Lead_Manager b, Senior_Manager c,Manager d,Employee e
+where a.company_code = b.company_code and b.lead_manager_code =
+c.lead_manager_code and c.senior_manager_code = d.senior_manager_code and
+d.manager_code = e.manager_code ) a
+group by a.company_code,a.founder
+order by a.company_code

@@ -1,0 +1,3 @@
+select ((avg(salary) - floor(AVG(REPLACE(salary, '0', ''))))+1)
+from Employees
+where salary between 1001 and 99999;

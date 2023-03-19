@@ -1,0 +1,5 @@
+select sal,count(*)
+from (select *, (salary*months) sal from Employee) a
+group by sal
+order by sal desc
+limit 1

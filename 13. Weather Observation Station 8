@@ -1,0 +1,7 @@
+SELECT City
+FROM Station
+WHERE City REGEXP '^[aeiou]' and City REGEXP '[aeiou]$';
+Or
+SELECT CITY
+FROM STATION
+WHERE CITY LIKE '[AEIOU]%[AEIOU]'

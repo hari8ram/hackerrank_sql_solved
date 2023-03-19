@@ -1,0 +1,4 @@
+select round(LONG_W,4) from
+Station a,
+(select max(LAT_N) Lat from Station where LAT_N < 137.2345) b
+where a.LAT_N = b.Lat

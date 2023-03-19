@@ -1,0 +1,4 @@
+select a.continent,floor(avg(b.population))
+from COUNTRY a, CITY b
+where a.code=b.countrycode
+group by continent

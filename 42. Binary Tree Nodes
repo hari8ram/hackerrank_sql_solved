@@ -1,0 +1,10 @@
+select * from
+(select N, "Root" as bst from BST where P is null
+UNION
+select P, "Inner" as bst from BST
+where P in (select distinct P FROM bst
+where P not in (select N from BST where P is null)) and P is not null
+UNION
+select N ,"Leaf" as bst from BST
+where N not in (select distinct P from BST where P is not null)) a
+order by N
